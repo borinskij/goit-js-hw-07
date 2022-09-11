@@ -16,7 +16,8 @@ function creatImgCardMarkup(galleryItems) {
                 href="${original}">
                 <img class="gallery__image"
                 src="${preview}" 
-                alt="${description}"/></a>
+                alt=""
+                title="${description}"></a>
                 
         `
     }).join('');

@@ -27,10 +27,20 @@ difGaleryRef.addEventListener('click', onSrcModals);
 
 function onSrcModals(event) {
     event.preventDefault();
-    const src = event.target.dataset.source
-     const instance = basicLightbox.create(`
-     <img src="${src}" width="800" height="600">
- `)
+    const src = event.target.dataset.source;
+    const instance = basicLightbox.create(`<img src="${src}" width="800" height="600">`);
+    instance.show();
+    
+    const visible = basicLightbox.visible();
+    if (visible) { 
+        window.addEventListener('keydown', onEscKeyPress);
+            function onEscKeyPress(event){
+        // console.log(event.code)
+            if (event.code === 'Escape') {
+                instance.close()
+                window.removeEventListener('keydown', onEscKeyPress)
+            }
+        }
  
- instance.show()
+    }
 }
