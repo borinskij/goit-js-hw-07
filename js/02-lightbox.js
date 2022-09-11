@@ -16,7 +16,7 @@ function creatImgCardMarkup(galleryItems) {
                 href="${original}">
                 <img class="gallery__image"
                 src="${preview}" 
-                alt=""
+                alt="${description}"
                 title="${description}"></a>
                 
         `
