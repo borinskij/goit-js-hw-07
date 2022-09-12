@@ -1,7 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
+// console.log(galleryItems);
 
 
 const galleryRef = document.querySelector('.gallery');
@@ -17,20 +17,17 @@ function creatImgCardMarkup(galleryItems) {
                 <img class="gallery__image"
                 src="${preview}" 
                 alt="${description}"
-                title="${description}"></a>
+                ></a>
                 
         `
     }).join('');
 }
 
-galleryRef.addEventListener('click', onImgModal);
 
-function onImgModal(event) {
-    event.preventDefault();
-    const hrefModal = event.target.parentElement.href;
-    const lightbox = new SimpleLightbox('.gallery a', {hrefModal});
+const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt'});
 
-}
+
+
 
 
 
